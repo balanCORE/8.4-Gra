@@ -1,60 +1,77 @@
-//wyniki
-var addPointPlayer = document.getElementById('myPoints');
-var addPointComputer = document.getElementById('compPoints');
-//buttony
-var rockChoice = document.getElementById('btnRock');
-var scisorsChoice = document.getElementById('btnScisors');
-var paperChoice = document.getElementById('btnPaper');
+//  output
+var playerPoints = document.getElementById('myPoints');
+var computerPoints = document.getElementById('compPoints');
 
-// zapisanie wyników
-var playerSum = {sum: 0, choice: ' '};
-var computerSum = {sum: 0, choice: ' '};
+// buttons
+var rockBtn = document.getElementById('btnRock');
+var scisorsBtn = document.getElementById('btnScisors');
+var paperBtn = document.getElementById('btnPaper');
 
-// klikacze
-rockChoice.addEventListener('click', function() {
-	playerChoice('rock')
-});
+//
+var player = {points: 0, choice: ''};
+var computer = {points: 0, choice: ''};
 
-scisorsChoice.addEventListener('click', function() {
-	playerChoice('scisors')
-});
+var choices = ['rock', 'scisors', 'paper'];
 
-paperChoice.addEventListener('click', function() {
-	playerChoice('paper')
-});
-
-function playerChoice(choice){
-	playerSum.choice = choice;
-	computerSum.choice = randomChoice();
-	compare();
-	showResults();
-	checkResults();
+//
+function playerChoice(choice) {
+	player.choice = choice;
+	computer.choice = computerChoice();
+	whoWinRound();
+	showResult();
+	countTen();
 }
 
-function randomChoice() {
-	var computerChoice = ['rock','scisors','paper'];
-	return computerChoice[Math.floor(Math.random() * 3)]
-};
+function computerChoice(){
+	return choices = Math.floor(Math.random()*3)
+}
 
-function compare(){
-	if(playerSum.choice === computerSum.choice) { playerSum.sum++ + computerSum.sum++; }
-	else if((playerSum.choice === 'rock' && computerSum.choice === 'scissors') || (playerSum.choice === 'paper' && computerSum.choice === 'rock') || (playerSum.choice === 'scissors' && computerSum.choice === 'paper')) {
-	playerSum.score++;}
-	else { computerSum.score++; }
-};
+function whoWinRound(){
+	if (player.choice == computer.choice) {player.points++ + computer.points++}
+		else if (player.choice == choices[0] && computer.choice == choices[1] || player.choice == choices[1] && computer.choice == choices[2] || player.choice == choices[2] && computer.choice == choices[3]) {player.points++}
+			else {computer.points++}
+}
 
-function showResults() {
-	addPointPlayer.innerHTML = playerSum.sum;
-	addPointComputer.innerHTML = computerSum.sum;
-};
+function showResult(){
+	playerPoints.innerHTML = player.points;
+	computerPoints.innerHTML = computer.points;
+}
 
-function checkResults() {
-	if (playerSum.sum == 10) {
-		addPointPlayer.innerHTML = "YOU";
-		addPointComputer.innerHTML = "WON!"
-	} else if (computerSum.sum == 10) {
-		addPointPlayer.innerHTML = "YOU";
-		addPointComputer.innerHTML = "LOST!!"
+function countTen() {
+	if (player.points == 10) {
+		playerPoints.innerHTML = "YOU";
+		computerPoints.innerHTML = "WON!!";
+	} else if (computer.points == 10) {
+		playerPoints.innerHTML = "YOU";
+		computerPoints.innerHTML = "LOST";
 	}
 }
+
+rockBtn.addEventListener('click', function(){
+	playerChoice('rock')
+})
+scisorsBtn.addEventListener('click', function(){
+	playerChoice('scisors')
+})
+paperBtn.addEventListener('click', function(){
+	playerChoice('paper')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
