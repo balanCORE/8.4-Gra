@@ -1,0 +1,33 @@
+section {
+	min-width: 500px;
+	margin: 0 auto;
+}
+.wyniki {
+	display: flex;
+	justify-content: center;
+	.results {
+		height: 40vh;
+		margin-top: 10vh;
+		width: 50%;
+		display: flex;
+		justify-content: space-around;
+		align-items: baseline;
+		div {
+			font-size: 90px;
+			font-weight: bold;
+		}
+	}
+}
+.myChoice {
+	.buttons {
+		height: 40vh;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		button {
+			padding: 40px 80px;
+			border: 3px solid orange;
+			font-size: 50px;
+		}
+	}
+}

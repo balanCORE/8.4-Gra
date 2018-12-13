@@ -1,0 +1,34 @@
+section {
+  min-width: 500px;
+  margin: 0 auto; }
+
+.wyniki {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .wyniki .results {
+    height: 40vh;
+    margin-top: 10vh;
+    width: 50%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: baseline;
+        align-items: baseline; }
+    .wyniki .results div {
+      font-size: 90px;
+      font-weight: bold; }
+
+.myChoice .buttons {
+  height: 40vh;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .myChoice .buttons button {
+    padding: 40px 80px;
+    border: 3px solid orange;
+    font-size: 50px; }
