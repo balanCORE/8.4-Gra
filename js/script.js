@@ -23,8 +23,8 @@ function playerChoice(choice) {
 }
 
 function computerChoice(){
-	let choices = ['rock', 'scisors', 'paper'];
-	return choices = Math.floor(Math.random()*3)
+	const choices = ['rock', 'scisors', 'paper'];
+	return choices[Math.floor(Math.random()*3)]
 }
 
 function whoWinRound() {
