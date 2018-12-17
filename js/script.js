@@ -8,10 +8,10 @@ var scisorsBtn = document.getElementById('btnScisors');
 var paperBtn = document.getElementById('btnPaper');
 
 //
-var player = {points: 0, choice: ''};
-var computer = {points: 0, choice: ''};
+var player = {score: 0, choice: ''};
+var computer = {score: 0, choice: ''};
 
-var choices = ['rock', 'scisors', 'paper'];
+
 
 //
 function playerChoice(choice) {
@@ -23,25 +23,26 @@ function playerChoice(choice) {
 }
 
 function computerChoice(){
+	var choices = ['rock', 'scisors', 'paper'];
 	return choices = Math.floor(Math.random()*3)
 }
 
 function whoWinRound(){
-	if (player.choice == computer.choice) {player.points++ + computer.points++}
-		else if (player.choice == choices[0] && computer.choice == choices[1] || player.choice == choices[1] && computer.choice == choices[2] || player.choice == choices[2] && computer.choice == choices[3]) {player.points++}
-			else {computer.points++}
+	if (player.choice == computer.choice) player.score++ + computer.score++;
+	else if (player.choice == 'rock' && computer.choice == 'scisors' || player.choice == 'scisors' && computer.choice == 'paper' || player.choice == 'paper' && computer.choice == 'rock') player.score++;
+	else computer.score++
 }
 
 function showResult(){
-	playerPoints.innerHTML = player.points;
-	computerPoints.innerHTML = computer.points;
+	playerPoints.innerHTML = player.score;
+	computerPoints.innerHTML = computer.score;
 }
 
 function countTen() {
-	if (player.points == 10) {
+	if (player.score == 10) {
 		playerPoints.innerHTML = "YOU";
 		computerPoints.innerHTML = "WON!!";
-	} else if (computer.points == 10) {
+	} else if (computer.score == 10) {
 		playerPoints.innerHTML = "YOU";
 		computerPoints.innerHTML = "LOST";
 	}
