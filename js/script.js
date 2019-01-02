@@ -1,19 +1,25 @@
 //  output
 var playerPoints = document.getElementById('myPoints');
 var computerPoints = document.getElementById('compPoints');
+var howManyRounds = document.getElementById('roundOutput');
 
 // buttons
 var rockBtn = document.getElementById('btnRock');
 var scisorsBtn = document.getElementById('btnScisors');
 var paperBtn = document.getElementById('btnPaper');
 
+var menuBtn = document.getElementById('menu');
+
 //
 let player = {score: 0, choice: ''};
 let computer = {score: 0, choice: ''};
 
+var countTo = 10;
 
-
+howManyRounds.innerHTML = countTo;
 //
+
+
 function playerChoice(choice) {
 	player.choice = choice;
 	computer.choice = computerChoice();
@@ -39,11 +45,11 @@ function showResult(){
 }
 
 function countTen() {
-	if (player.score == 10) {
+	if (player.score == countTo) {
 		playerPoints.innerHTML = "YOU";
 		computerPoints.innerHTML = "WON!!";
 		refresh();
-	} else if (computer.score == 10) {
+	} else if (computer.score == countTo) {
 		playerPoints.innerHTML = "YOU";
 		computerPoints.innerHTML = "LOST";
 		refresh();
@@ -55,6 +61,12 @@ function refresh(){
 	computer.score = 0
 }
 
+menuBtn.addEventListener('click', function(){
+	countTo = prompt('Ile rund zagramy?')
+	refresh();
+	howManyRounds.innerHTML = countTo;
+})
+
 rockBtn.addEventListener('click', function(){
 	playerChoice('rock')
 })
@@ -64,22 +76,3 @@ scisorsBtn.addEventListener('click', function(){
 paperBtn.addEventListener('click', function(){
 	playerChoice('paper')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
