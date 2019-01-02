@@ -58,13 +58,15 @@ function countTen() {
 
 function refresh(){
 	player.score = 0;
-	computer.score = 0
+	computer.score = 0;
 }
 
 menuBtn.addEventListener('click', function(){
 	countTo = prompt('Ile rund zagramy?')
 	refresh();
 	howManyRounds.innerHTML = countTo;
+	playerPoints.innerHTML = "New";
+	computerPoints.innerHTML = "Game";
 })
 
 rockBtn.addEventListener('click', function(){
