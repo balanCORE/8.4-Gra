@@ -13,20 +13,22 @@ section {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center; }
-  .wyniki .results {
-    height: 40vh;
-    margin-top: 10vh;
-    width: 50%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -ms-flex-align: baseline;
-        align-items: baseline; }
-    .wyniki .results div {
-      font-size: 90px;
-      font-weight: bold; }
+  justify-content: center; }
+
+.wyniki .results {
+  height: 40vh;
+  margin-top: 10vh;
+  width: 50%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-align: baseline;
+  align-items: baseline; }
+
+.wyniki .results div {
+  font-size: 90px;
+  font-weight: bold; }
 
 .myChoice .buttons {
   height: 40vh;
@@ -34,8 +36,40 @@ section {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around; }
-  .myChoice .buttons button {
-    padding: 40px 80px;
-    border: 3px solid orange;
-    font-size: 50px; }
+  justify-content: space-around; }
+
+.myChoice .buttons button {
+  padding: 40px 80px;
+  border: 3px solid orange;
+  font-size: 50px; }
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.modal__body {
+  background: #fff;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  position: relative; }
+  .modal__body .closeModalBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+  .modal__body .resetTableBtn {
+    position: absolute;
+    top: 20px;
+    right: 10px; }
+
+/*
+roundResults[{ playerChoice: 'rock', computerChoice: 'paper', score: 1:0 }, { playerChoice: 'rock', computerChoice: 'paper', score: 2:0 }, { playerChoice: 'rock', computerChoice: 'paper', score: 3:0 }]*/
